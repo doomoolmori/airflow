@@ -71,17 +71,17 @@ spec:
             - 'airflow users create "$@" || airflow create_user "$@"'
             - --
             - "-r"
-            - {{ .Values.webserver.defaultUser.role }}
+            - "{{ .Values.webserver.defaultUser.role }}"
             - "-u"
-            - {{ .Values.webserver.defaultUser.username }}
+            - "{{ .Values.webserver.defaultUser.username }}"
             - "-e"
-            - {{ .Values.webserver.defaultUser.email }}
+            - "{{ .Values.webserver.defaultUser.email }}"
             - "-f"
-            - {{ .Values.webserver.defaultUser.firstName }}
+            - "{{ .Values.webserver.defaultUser.firstName }}"
             - "-l"
-            - {{ .Values.webserver.defaultUser.lastName }}
+            - "{{ .Values.webserver.defaultUser.lastName }}"
             - "-p"
-            - {{ .Values.webserver.defaultUser.password }}
+            - "{{ .Values.webserver.defaultUser.password }}"
           envFrom:
           {{- include "custom_airflow_environment_from" . | default "\n  []" | indent 10 }}
           env:
